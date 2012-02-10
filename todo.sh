@@ -1059,6 +1059,10 @@ case $action in
     grep -o '[^ ]*@[^ ]\+' "$TODO_FILE" | grep '^@' | sort -u
     ;;
 
+"listdue" | "lsd" )
+    grep -o '[^ ]*\*[^ ]\+' "$TODO_FILE" | grep '^\*' | sort -u
+    ;;
+
 "listproj" | "lsprj" )
     shift
     eval "$(filtercommand 'cat "$TODO_FILE"' '' "$@")" | grep -o '[^ ]*+[^ ]\+' | grep '^+' | sort -u
